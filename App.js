@@ -1,20 +1,45 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import ProfileScreen from './screens/ProfileScreen';
+import CourseListScreen from './screens/CourseListScreen';
+import SettingScreen from './screens/SettingScreen';
+import Ionicons from '@expo/vector-icons/Ionicons'
+import { AboutStack } from './AppStack';
 
-export default function App() {
+
+const Tab = createBottomTabNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+   <NavigationContainer>
+    <Tab.Navigator screenOptions={{
+      tabBarLabelPosition: 'below-icon',
+      tabBarShowLabel: true,
+      tabBarActiveTintColor: 'purple',
+      tabBarInactiveTintColor: '#f33'
+    }}>
+      <Tab.Screen 
+        name="Course List" 
+        component={CourseListScreen} 
+      />
+      <Tab.Screen 
+        name="Profile" 
+        component={ProfileScreen}  
+        options={{
+          tabBarLabel: 'My Profile',
+          tabBarIcon: ({ color }) => <Ionicons name="person" size={20} color={color} />,
+          tabBarBadge: 3
+        }}
+      />
+      <Tab.Screen name="Settings" component={SettingScreen} />
+      <Tab.Screen name="About Stack" component={AboutStack} options={{headerShown: false}} />
+    </Tab.Navigator>
+   </NavigationContainer>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
+
+const styles = StyleSheet.create({})

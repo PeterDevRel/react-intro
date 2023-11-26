@@ -1,0 +1,15 @@
+[
+    {"id": "1", "type": "Grass", "name": "Bulbasaur"},
+    {"id": "2", "type": "Grass", "name": "Ivysaur"},
+    {"id": "3", "type": "Grass", "name": "Venusaur"},
+    {"id": "4", "type": "Frie", "name": "Charmander"},
+    {"id": "5", "type": "Fire", "name": "Charmelon"},
+    {"id": "6", "type": "Fire", "name": "Charizard"},
+    {"id": "7", "type": "Water", "name": "Squirtle"},
+    {"id": "8", "type": "Water", "name": "Wartortle"},
+    {"id": "9", "type": "Water", "name": "Blastoise"},
+    {"id": "10", "type": "Bug", "name": "Caterpie"},
+    {"id": "11", "type": "Bug", "name": "Metapod"},
+    {"id": "12", "type": "Bug", "name": "Butterfree"}
+
+]
